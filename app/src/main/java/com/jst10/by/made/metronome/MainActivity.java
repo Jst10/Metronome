@@ -58,14 +58,14 @@ public class MainActivity extends AppCompatActivity {
     private void initBottomFragment() {
         Fragment fragment = new BottomFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.top_fragment_container, fragment, TAG_BOTTOM_FRAGMENT);
+        transaction.replace(R.id.bottom_fragment_container, fragment, TAG_BOTTOM_FRAGMENT);
         transaction.commit();
     }
 
     private void initMiddleFragment() {
         Fragment fragment = new MiddleFragment1();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.top_fragment_container, fragment, TAG_MIDDLE_FRAGMENT);
+        transaction.replace(R.id.middle_fragment_container, fragment, TAG_MIDDLE_FRAGMENT);
         transaction.commit();
     }
 

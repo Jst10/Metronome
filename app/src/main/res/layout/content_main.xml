@@ -12,8 +12,27 @@
     tools:context="com.jst10.by.made.metronome.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+
+    <RelativeLayout android:id="@+id/top_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="100dp">
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/bottom_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="100dp">
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/middle_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/top_fragment_container"
+        android:layout_above="@+id/bottom_fragment_container"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
 </RelativeLayout>

@@ -1,5 +1,8 @@
 package com.jst10.by.made.metronome;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +11,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
+
+import com.jst10.by.made.metronome.fragments.BaseMiddleFragment;
+import com.jst10.by.made.metronome.fragments.BottomFragment;
+import com.jst10.by.made.metronome.fragments.MiddleFragment1;
+import com.jst10.by.made.metronome.fragments.TopFragment;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    private static final String TAG_TOP_FRAGMENT = "top_fragment";
+    private static final String TAG_BOTTOM_FRAGMENT = "bottom_fragment";
+    private static final String TAG_MIDDLE_FRAGMENT = "middle_fragment";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,19 +32,45 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initFragments();
+    }
+
+    private void initFragments() {
+        initTopFragment();
+        initBottomFragment();
+        initMiddleFragment();
+    }
+
+    private void initTopFragment() {
+        Fragment fragment = new TopFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.top_fragment_container, fragment, TAG_TOP_FRAGMENT);
+        transaction.commit();
+    }
+
+    private void initBottomFragment() {
+        Fragment fragment = new BottomFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.top_fragment_container, fragment, TAG_BOTTOM_FRAGMENT);
+        transaction.commit();
+    }
+
+    private void initMiddleFragment() {
+        Fragment fragment = new MiddleFragment1();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.top_fragment_container, fragment, TAG_MIDDLE_FRAGMENT);
+        transaction.commit();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }

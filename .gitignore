@@ -1,0 +1,13 @@
+*.class
+bin/*
+.classpath
+.project
+project.properties
+.settings/*
+gen/*
+local.properties
+build/*
+.gradle/*
+gradle/*
+.idea/*
+Metronome.iml

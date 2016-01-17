@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
 
 
     <Button
         android:id="@+id/button_reduce_tempo"
         android:layout_alignParentLeft="true"
         android:layout_width="wrap_content"
+        android:text="-"
+        android:textSize="30sp"
         android:layout_height="wrap_content"
         />
 
-    <EditText
+    <com.jst10.by.made.metronome.custom.views.CustomEditText
         android:id="@+id/field_tempo"
-        android:minWidth="50dp"
-        android:textSize="16sp"
+        android:minWidth="80dp"
+        android:textSize="28sp"
         android:inputType="number"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -23,6 +26,8 @@
     <Button
         android:id="@+id/button_increase_tempo"
         android:layout_alignParentRight="true"
+        android:text="+"
+        android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />

@@ -15,6 +15,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 
 import com.jst10.by.made.metronome.Constants;
+import com.jst10.by.made.metronome.MainActivity;
 import com.jst10.by.made.metronome.R;
 import com.jst10.by.made.metronome.custom.views.CustomEditText;
 
@@ -25,10 +26,6 @@ public class BottomFragment1 extends Fragment {
     public interface TempoChangedListener {
         void onTempoChanged();
     }
-
-    public static final int DEFAULT_TEMPO = 60;
-    public static final int MAX_TEMPO_LIMIT = 300;
-    public static final int MINIMAL_TEMPO_LIMIT = 30;
 
     private static final int REP_DELAY = 50;
 
@@ -131,7 +128,7 @@ public class BottomFragment1 extends Fragment {
 
     private void init() {
         preferences = getActivity().getSharedPreferences(Constants.ALL_PREFERENCES_KEY, Context.MODE_PRIVATE);
-        currentTempo = preferences.getInt(Constants.PREFERENCE_KEY_TEMPO, DEFAULT_TEMPO);
+        currentTempo = preferences.getInt(Constants.PREFERENCE_KEY_TEMPO, MainActivity.DEFAULT_TEMPO);
         tempoField.setText(Integer.toString(currentTempo));
         autoIncrement = false;
         autoReduce = false;
@@ -153,7 +150,7 @@ public class BottomFragment1 extends Fragment {
     }
 
     private void increment() {
-        if (currentTempo >= MAX_TEMPO_LIMIT) {
+        if (currentTempo >= MainActivity.MAX_TEMPO_LIMIT) {
             autoIncrement = false;
         } else {
             currentTempo++;
@@ -163,7 +160,7 @@ public class BottomFragment1 extends Fragment {
     }
 
     private void decrement() {
-        if (currentTempo <= MINIMAL_TEMPO_LIMIT) {
+        if (currentTempo <= MainActivity.MINIMAL_TEMPO_LIMIT) {
             autoReduce = false;
         } else {
             currentTempo--;
@@ -177,16 +174,16 @@ public class BottomFragment1 extends Fragment {
         String value = tempoField.getText().toString();
         try {
             currentTempo = Integer.parseInt(value);
-            if (currentTempo < MINIMAL_TEMPO_LIMIT) {
-                currentTempo = MINIMAL_TEMPO_LIMIT;
+            if (currentTempo < MainActivity.MINIMAL_TEMPO_LIMIT) {
+                currentTempo = MainActivity.MINIMAL_TEMPO_LIMIT;
                 tempoField.setText(Integer.toString(currentTempo));
-            } else if (currentTempo > MAX_TEMPO_LIMIT) {
-                currentTempo = MAX_TEMPO_LIMIT;
+            } else if (currentTempo > MainActivity.MAX_TEMPO_LIMIT) {
+                currentTempo = MainActivity.MAX_TEMPO_LIMIT;
                 tempoField.setText(Integer.toString(currentTempo));
             }
         } catch (Exception e) {
             e.printStackTrace();
-            currentTempo = DEFAULT_TEMPO;
+            currentTempo = MainActivity.DEFAULT_TEMPO;
             tempoField.setText(Integer.toString(currentTempo));
         }
         Log.d("tempoch", "tempochanged:" + currentTempo);

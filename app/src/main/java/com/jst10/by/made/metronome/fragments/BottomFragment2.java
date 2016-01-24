@@ -16,6 +16,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.jst10.by.made.metronome.Constants;
+import com.jst10.by.made.metronome.MainActivity;
 import com.jst10.by.made.metronome.R;
 import com.jst10.by.made.metronome.custom.views.CustomEditText;
 
@@ -27,11 +28,6 @@ public class BottomFragment2 extends Fragment {
         void onTempoChanged();
     }
 
-    public static final int DEFAULT_TEMPO = 60;
-    public static final int MAX_TEMPO_LIMIT = 300;
-    public static final int MINIMAL_TEMPO_LIMIT = 30;
-
-    private static final int REP_DELAY = 50;
 
     private View layoutView;
     private SeekBar seekBar;
@@ -74,8 +70,8 @@ public class BottomFragment2 extends Fragment {
 
     private void init() {
         preferences = getActivity().getSharedPreferences(Constants.ALL_PREFERENCES_KEY, Context.MODE_PRIVATE);
-        currentTempo = preferences.getInt(Constants.PREFERENCE_KEY_TEMPO, DEFAULT_TEMPO);
-        seekBar.setMax(MAX_TEMPO_LIMIT);
+        currentTempo = preferences.getInt(Constants.PREFERENCE_KEY_TEMPO, MainActivity.DEFAULT_TEMPO);
+        seekBar.setMax(MainActivity.MAX_TEMPO_LIMIT);
         seekBar.setProgress(currentTempo);
         seekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
     }

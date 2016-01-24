@@ -15,10 +15,16 @@ import com.jst10.by.made.metronome.fragments.TopFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private static final String TAG_TOP_FRAGMENT = "top_fragment";
     private static final String TAG_BOTTOM_FRAGMENT = "bottom_fragment1";
     private static final String TAG_MIDDLE_FRAGMENT = "middle_fragment";
+
+    public static final int DEFAULT_TEMPO = 60;
+    public static final int MAX_TEMPO_LIMIT = 300;
+    public static final int MINIMAL_TEMPO_LIMIT = 30;
+
+    private static final int REP_DELAY = 50;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

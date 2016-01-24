@@ -1,20 +1,15 @@
 package com.jst10.by.made.metronome;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.RelativeLayout;
 
-import com.jst10.by.made.metronome.fragments.BaseMiddleFragment;
-import com.jst10.by.made.metronome.fragments.BottomFragment;
+import com.jst10.by.made.metronome.fragments.BottomFragment1;
+import com.jst10.by.made.metronome.fragments.BottomFragment2;
 import com.jst10.by.made.metronome.fragments.MiddleFragment1;
 import com.jst10.by.made.metronome.fragments.TopFragment;
 
@@ -22,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private static final String TAG_TOP_FRAGMENT = "top_fragment";
-    private static final String TAG_BOTTOM_FRAGMENT = "bottom_fragment";
+    private static final String TAG_BOTTOM_FRAGMENT = "bottom_fragment1";
     private static final String TAG_MIDDLE_FRAGMENT = "middle_fragment";
 
     @Override
@@ -56,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initBottomFragment() {
-        Fragment fragment = new BottomFragment();
+        Fragment fragment = new BottomFragment2();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.bottom_fragment_container, fragment, TAG_BOTTOM_FRAGMENT);
         transaction.commit();

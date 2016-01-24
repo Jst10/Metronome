@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -14,7 +12,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.jst10.by.made.metronome.Constants;
@@ -24,7 +21,7 @@ import com.jst10.by.made.metronome.custom.views.CustomEditText;
 /**
  * Created by jst10 on 17.1.2016.
  */
-public class BottomFragment extends Fragment {
+public class BottomFragment1 extends Fragment {
     public interface TempoChangedListener {
         void onTempoChanged();
     }
@@ -120,7 +117,7 @@ public class BottomFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        layoutView = inflater.inflate(R.layout.bottom_fragment, container, false);
+        layoutView = inflater.inflate(R.layout.bottom_fragment1, container, false);
         bindViews();
         init();
         return layoutView;

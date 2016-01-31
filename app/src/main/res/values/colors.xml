@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+    <color name="light_activated_1">#4CFD49</color>
+    <color name="light_deactivated_1">#94B394</color>
+    <color name="light_border_1">#94B394</color>
+
+    <color name="light_activated_2">#4C49FD</color>
+    <color name="light_deactivated_2">#9494B3</color>
+    <color name="light_border_2">#9494B3</color>
+
 </resources>

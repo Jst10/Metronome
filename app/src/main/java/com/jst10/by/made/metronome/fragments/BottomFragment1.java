@@ -23,7 +23,7 @@ import com.jst10.by.made.metronome.interfaces.TempoChangedListener;
 /**
  * Created by jst10 on 17.1.2016.
  */
-public class BottomFragment1 extends Fragment {
+public class BottomFragment1 extends BaseBottomFragment {
 
     private static final int REP_DELAY = 50;
 
@@ -31,18 +31,12 @@ public class BottomFragment1 extends Fragment {
     private CustomEditText tempoField;
     private View reduceTempoButton;
     private View increaseTempoButton;
-    private TempoChangedListener tempoChangedListener;
 
 
-    private int currentTempo;
     private boolean autoIncrement;
     private boolean autoReduce;
 
-    private SharedPreferences preferences;
-
     private Handler repeatUpdateHandler = new Handler();
-
-
 
     private CustomEditText.EditingListener editingListener=new CustomEditText.EditingListener() {
         @Override
@@ -143,9 +137,6 @@ public class BottomFragment1 extends Fragment {
         increaseTempoButton.setOnTouchListener(onTouchListener);
     }
 
-    public void setTempoChangedListener(TempoChangedListener tempoChangedListener) {
-        this.tempoChangedListener = tempoChangedListener;
-    }
 
     private void increment() {
         if (currentTempo >= MainActivity.MAX_TEMPO_LIMIT) {
@@ -188,16 +179,6 @@ public class BottomFragment1 extends Fragment {
         tempoChanged();
     }
 
-    private void tempoChanged() {
-
-        SharedPreferences.Editor prefsEditor = preferences.edit();
-        prefsEditor.putInt(Constants.PREFERENCE_KEY_TEMPO, currentTempo);
-        prefsEditor.apply();
-
-        if (tempoChangedListener != null) {
-            tempoChangedListener.onTempoChanged();
-        }
-    }
 
     class TempoUpdater implements Runnable {
         public void run() {

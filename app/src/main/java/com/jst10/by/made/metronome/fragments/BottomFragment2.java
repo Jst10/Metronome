@@ -24,16 +24,11 @@ import com.jst10.by.made.metronome.interfaces.TempoChangedListener;
 /**
  * Created by jst10 on 17.1.2016.
  */
-public class BottomFragment2 extends Fragment {
+public class BottomFragment2 extends BaseBottomFragment {
 
 
     private View layoutView;
     private SeekBar seekBar;
-    private TempoChangedListener tempoChangedListener;
-
-
-    private int currentTempo;
-    private SharedPreferences preferences;
 
 
     private SeekBar.OnSeekBarChangeListener onSeekBarChangeListener =new SeekBar.OnSeekBarChangeListener() {
@@ -67,27 +62,11 @@ public class BottomFragment2 extends Fragment {
     }
 
     private void init() {
-        preferences = getActivity().getSharedPreferences(Constants.ALL_PREFERENCES_KEY, Context.MODE_PRIVATE);
         currentTempo = preferences.getInt(Constants.PREFERENCE_KEY_TEMPO, MainActivity.DEFAULT_TEMPO);
         seekBar.setMax(MainActivity.MAX_TEMPO_LIMIT);
         seekBar.setProgress(currentTempo);
         seekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
     }
 
-    public void setTempoChangedListener(TempoChangedListener tempoChangedListener) {
-        this.tempoChangedListener = tempoChangedListener;
-    }
-
-
-    private void tempoChanged() {
-
-        SharedPreferences.Editor prefsEditor = preferences.edit();
-        prefsEditor.putInt(Constants.PREFERENCE_KEY_TEMPO, currentTempo);
-        prefsEditor.apply();
-
-        if (tempoChangedListener != null) {
-            tempoChangedListener.onTempoChanged();
-        }
-    }
 
 }

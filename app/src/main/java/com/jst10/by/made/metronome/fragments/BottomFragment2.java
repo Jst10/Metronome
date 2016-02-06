@@ -19,14 +19,12 @@ import com.jst10.by.made.metronome.Constants;
 import com.jst10.by.made.metronome.MainActivity;
 import com.jst10.by.made.metronome.R;
 import com.jst10.by.made.metronome.custom.views.CustomEditText;
+import com.jst10.by.made.metronome.interfaces.TempoChangedListener;
 
 /**
  * Created by jst10 on 17.1.2016.
  */
 public class BottomFragment2 extends Fragment {
-    public interface TempoChangedListener {
-        void onTempoChanged();
-    }
 
 
     private View layoutView;

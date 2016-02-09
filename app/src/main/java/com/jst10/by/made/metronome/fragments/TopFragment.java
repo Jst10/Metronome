@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jst10.by.made.metronome.R;
-import com.jst10.by.made.metronome.custom.views.Light;
+import com.jst10.by.made.metronome.custom.views.CustomLight;
 
 /**
  * Created by jst10 on 17.1.2016.
@@ -15,7 +15,7 @@ import com.jst10.by.made.metronome.custom.views.Light;
 public class TopFragment extends Fragment {
         private View layoutView;
 
-        private Light[] lights;
+        private CustomLight[] lights;
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             layoutView = inflater.inflate(R.layout.top_fragment, container, false);
@@ -25,11 +25,11 @@ public class TopFragment extends Fragment {
         }
 
         private void bindViews() {
-            lights=new Light[4];
-            lights[0]= (Light) layoutView.findViewById(R.id.light1);
-            lights[1]= (Light) layoutView.findViewById(R.id.light2);
-            lights[2]= (Light) layoutView.findViewById(R.id.light3);
-            lights[3]= (Light) layoutView.findViewById(R.id.light4);
+            lights=new CustomLight[4];
+            lights[0]= (CustomLight) layoutView.findViewById(R.id.light1);
+            lights[1]= (CustomLight) layoutView.findViewById(R.id.light2);
+            lights[2]= (CustomLight) layoutView.findViewById(R.id.light3);
+            lights[3]= (CustomLight) layoutView.findViewById(R.id.light4);
 
         }
 

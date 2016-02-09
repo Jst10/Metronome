@@ -12,7 +12,7 @@ import com.jst10.by.made.metronome.R;
 /**
  * Created by jst10 on 31.1.2016.
  */
-public class Light extends View {
+public class CustomLight extends View {
     private static final int TYPE_MAIN = 0;
     private static final int TYPE_MINOR = 1;
 
@@ -24,21 +24,21 @@ public class Light extends View {
     private Paint activatedPaint;
     private Paint deactivatedPaint;
 
-    public Light(Context context, AttributeSet attrs) {
+    public CustomLight(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public Light(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CustomLight(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
     private void init(Context context, AttributeSet attributeSet) {
-        TypedArray a = context.getTheme().obtainStyledAttributes(attributeSet, R.styleable.Light, 0, 0);
+        TypedArray a = context.getTheme().obtainStyledAttributes(attributeSet, R.styleable.CustomLight, 0, 0);
         type = TYPE_MAIN;
         try {
-            type = a.getInteger(R.styleable.Light_type, TYPE_MAIN);
+            type = a.getInteger(R.styleable.CustomLight_type, TYPE_MAIN);
         } finally {
             initColors();
             a.recycle();

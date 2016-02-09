@@ -7,28 +7,28 @@
     android:orientation="horizontal">
 
 
-    <com.jst10.by.made.metronome.custom.views.Light
+    <com.jst10.by.made.metronome.custom.views.CustomLight
         android:id="@+id/light1"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_margin="5dp"
         custom:type="main" />
 
-    <com.jst10.by.made.metronome.custom.views.Light
+    <com.jst10.by.made.metronome.custom.views.CustomLight
         android:id="@+id/light2"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_margin="5dp"
         custom:type="main" />
 
-    <com.jst10.by.made.metronome.custom.views.Light
+    <com.jst10.by.made.metronome.custom.views.CustomLight
         android:id="@+id/light3"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_margin="5dp"
         custom:type="minor" />
 
-    <com.jst10.by.made.metronome.custom.views.Light
+    <com.jst10.by.made.metronome.custom.views.CustomLight
         android:id="@+id/light4"
         android:layout_width="20dp"
         android:layout_height="20dp"

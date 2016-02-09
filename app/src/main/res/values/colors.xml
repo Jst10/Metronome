@@ -13,4 +13,8 @@
     <color name="light_deactivated_2">#9494B3</color>
     <color name="light_border_2">#9494B3</color>
 
+    <color name="progress_bar_progress">#4CFD49</color>
+    <color name="progress_bar_no_progress">#AAAAAA</color>
+    <color name="progress_bar_border">#AAAAAA</color>
+
 </resources>

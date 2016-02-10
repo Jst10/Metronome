@@ -17,4 +17,7 @@
     <color name="progress_bar_no_progress">#AAAAAA</color>
     <color name="progress_bar_border">#AAAAAA</color>
 
+    <color name="metronome_main_color">#AAAAAA</color>
+    <color name="metronome_tick_color">#AAAAAA</color>
+
 </resources>

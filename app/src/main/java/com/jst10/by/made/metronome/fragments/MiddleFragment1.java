@@ -12,6 +12,7 @@ import android.widget.SeekBar;
 import com.jst10.by.made.metronome.Constants;
 import com.jst10.by.made.metronome.MainActivity;
 import com.jst10.by.made.metronome.R;
+import com.jst10.by.made.metronome.custom.views.CustomMetronome;
 import com.jst10.by.made.metronome.custom.views.CustomProgressBar;
 import com.jst10.by.made.metronome.interfaces.TempoChangedListener;
 
@@ -21,7 +22,7 @@ import com.jst10.by.made.metronome.interfaces.TempoChangedListener;
 public class MiddleFragment1 extends BaseMiddleFragment {
 
     private View layoutView;
-    private CustomProgressBar progressBar;
+    private CustomMetronome progressBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class MiddleFragment1 extends BaseMiddleFragment {
     }
 
     private void bindViews() {
-        progressBar= (CustomProgressBar) layoutView.findViewById(R.id.progressBar);
+        progressBar= (CustomMetronome) layoutView.findViewById(R.id.progressBar);
     }
 
     private void init() {

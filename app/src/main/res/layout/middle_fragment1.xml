@@ -6,7 +6,7 @@
     >
 
 
-    <com.jst10.by.made.metronome.custom.views.CustomProgressBar
+    <com.jst10.by.made.metronome.custom.views.CustomMetronome
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/progressBar"

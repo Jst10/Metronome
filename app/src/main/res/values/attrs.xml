@@ -23,4 +23,11 @@
         <attr name="maxProgress" format="integer"/>
 
     </declare-styleable>
+
+    <declare-styleable name="CustomMetronome">
+        <attr name="metronomeMainColor" format="color"/>
+        <attr name="metronomeTickColor" format="color"/>
+        <attr name="maxMetronomeProgress" format="integer"/>
+
+    </declare-styleable>
 </resources>

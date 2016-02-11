@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.jst10.by.made.metronome.R;
@@ -81,23 +82,24 @@ public class CustomMetronome extends View {
         int width = getWidth();
         int height = getHeight();
 
-        int tickWidth = 10;
         int tickLength = height;
         int canvasMiddle = width / 2;
 
-//        x = cx + r * cos(a)
-//        y = cy + r * sin(a)
+        double startAngle = 0;
+        double endAngle = 0;
+
         if (canvasMiddle < height) {
-
+            startAngle = Math.acos(canvasMiddle / (double) height);
         } else {
+            startAngle = 0.5;
         }
-        double startAngle = Math.acos(canvasMiddle / height);
-        double endAngle = 180 - startAngle;
+        endAngle = Math.PI - startAngle;
 
-        double currentAngle = (progress / (double) maxProgress) * (endAngle - startAngle);
+
+        double currentAngle = endAngle - ((progress / (double) maxProgress) * (endAngle - startAngle));
 
         int x = (int) (canvasMiddle + tickLength * Math.cos(currentAngle));
-        int y = (int) (tickLength * Math.sin(currentAngle));
+        int y = (int) (height - tickLength * Math.sin(currentAngle));
 
         canvas.drawLine(canvasMiddle, height, x, y, tickPaint);
 

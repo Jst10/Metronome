@@ -42,12 +42,20 @@ public class MiddleFragment1 extends BaseMiddleFragment {
     }
 
 
+    private boolean reverse=false;
 
 
     @Override
     public void onTick(int tick) {
         if(progressBar!=null&&isAdded()) {
-            progressBar.setProgress(tick);
+            if(reverse){
+                progressBar.setProgress((int)MainActivity.NUMBER_OF_TICKS_PER_BIT-tick);
+            }else {
+                progressBar.setProgress(tick);
+            }
+            if(tick==MainActivity.NUMBER_OF_TICKS_PER_BIT){
+                reverse=!reverse;
+            }
         }
     }
 }

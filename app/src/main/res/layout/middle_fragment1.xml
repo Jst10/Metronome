@@ -6,11 +6,17 @@
     >
 
 
-    <com.jst10.by.made.metronome.custom.views.CustomMetronome
-        android:layout_width="match_parent"
+    <com.jst10.by.made.metronome.custom.views.CustomProgressBar
+        android:layout_width="30dp"
         android:layout_height="match_parent"
         android:id="@+id/progressBar"
-        custom:orientation="horizontal"
-
+        custom:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/seekBar"
        />
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
 </RelativeLayout>

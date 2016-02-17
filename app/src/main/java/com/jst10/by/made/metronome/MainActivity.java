@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG_MIDDLE_FRAGMENT = "middle_fragment";
 
     public static final double NUMBER_OF_SECONDS_IN_MINUTE=60.0;
-    public static final double NUMBER_OF_TICKS_PER_BIT=5.0;
+    public static final double NUMBER_OF_TICKS_PER_BIT=10.0;
 
     public static final int DEFAULT_TEMPO = 60;
-    public static final int MAX_TEMPO_LIMIT = 300;
+    public static final int MAX_TEMPO_LIMIT = 600;
     public static final int MINIMAL_TEMPO_LIMIT = 1;
 
 
